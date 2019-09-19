@@ -24,12 +24,12 @@ public class CustomerController {
 
     @GetMapping(value = "/town/{town}/course/{id}")
     public List<Customer>findByTownAndCourse(@PathVariable String town, @PathVariable Long id){
-        return customerRepository.findByTownAndCourse(town, id);
+        return customerRepository.findByTownAndBookingsCourseIdAllIgnoreCase(town, id);
     }
 
     @GetMapping(value = "age-gt/{age}/town/{town}/course/{id}")
     public List<Customer>findCustomersOverAgeByTownAndCourse(@PathVariable int age, @PathVariable String town,@PathVariable Long id){
-        return customerRepository.findCustomersOverAgeByTownAndCourse(age, town, id);
+        return customerRepository.findByAgeGreaterThanAndTownAndBookingsCourseIdAllIgnoreCase(age, town, id);
     }
 
 
