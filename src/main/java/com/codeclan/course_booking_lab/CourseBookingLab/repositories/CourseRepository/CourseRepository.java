@@ -5,10 +5,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface CourseRepository extends JpaRepository<Course, Long> , CourseRepositoryCustom {
+public interface CourseRepository extends JpaRepository<Course, Long>  {
 
     List<Course> findCoursesByRating(int rating);
 
-    List<Course> findByCustomer(Long customId);
+    List<Course> findByCustomer(Long customerId);
 
 }
